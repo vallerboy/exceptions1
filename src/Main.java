@@ -1,3 +1,7 @@
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+
+import java.io.IOException;
+
 /**
  * Created by Lenovo on 18.08.2017.
  */
@@ -8,8 +12,8 @@ public class Main {
         Main main = new Main();
 
         try {
-            main.divide(5, 0);
-        }catch (IllegalArgumentException e){
+            main.prepareDivide();
+        }catch (IOException ebbobuoiibbbcfxfdxfcjjk){
             System.out.println("Witaj w mojej aplikacji opartej o API Oskara");
             System.out.println("nie mozesz tutaj dzielic przez 0");
 
@@ -17,10 +21,14 @@ public class Main {
     }
 
 
-    // API
-    public int divide(int a, int b){
+    // API ///
+    public int prepareDivide() throws IOException {
+        return divide(5,0);
+    }
+
+    private int divide(int a, int b) throws IOException{
         if(b == 0){
-            throw new IllegalArgumentException("Do not divide by 0");
+            throw new IOException("Do not divide by 0");
         }
 
 
