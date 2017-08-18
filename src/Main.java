@@ -13,22 +13,20 @@ public class Main {
 
         try {
             main.prepareDivide();
-        }catch (IOException ebbobuoiibbbcfxfdxfcjjk){
-            System.out.println("Witaj w mojej aplikacji opartej o API Oskara");
-            System.out.println("nie mozesz tutaj dzielic przez 0");
-
+        }catch (WalletEmptyException e){
+             e.printStackTrace();
         }
     }
 
 
     // API ///
-    public int prepareDivide() throws IOException {
+    public int prepareDivide() throws WalletEmptyException {
         return divide(5,0);
     }
 
-    private int divide(int a, int b) throws IOException{
+    private int divide(int a, int b) throws WalletEmptyException{
         if(b == 0){
-            throw new IOException("Do not divide by 0");
+            throw new WalletEmptyException("Do not divide by 0");
         }
 
 
